@@ -19,8 +19,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         listlink = listlink.split('\n')
         final = []
         for link in listlink:
-            result = convertID(link)
-            final.append('{}|{}'.format(link, result))
+            if link != '':
+                result = convertID(link)
+                final.append('{}|{}'.format(link, result))
 
         f = ''.join([line + '\n' for line in final])
         self.plainTextEdit_2.appendPlainText(f)

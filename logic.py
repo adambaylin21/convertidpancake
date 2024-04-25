@@ -17,6 +17,8 @@ def getidpancake(api, idpost):
     apiNew = api + f'103086742653331/conversations/{idpost}'
     response = ss.get(url=apiNew , params=params, cookies=cookies, headers = header).text
     data = json.loads(response)
+    # with open('response.txt', 'w', encoding='utf-8') as f:
+    #     f.write(response)
     return data['customers'][0]['id']
 
 def getidprofile(api, idpost, idcake):
